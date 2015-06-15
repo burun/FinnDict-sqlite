@@ -8,6 +8,7 @@ class Word(models.Model):
     chinese = models.CharField(max_length=128, blank=True)
     sentence = models.CharField(max_length=256, blank=True)
     note = models.CharField(max_length=256, blank=True)
+    category = models.CharField(max_length=128, blank=True)
     slug = models.SlugField(unique=True)
 
     def __str__(self):
