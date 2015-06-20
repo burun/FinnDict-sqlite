@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-<head>  
-	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-</head>
+{% load staticfiles %}
 
-<body>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+{% block body_block %}
 	<h1>Practice flashcards </h1>
 
 	<script>
@@ -37,6 +36,4 @@
 	<div>
 	    <button onclick="ShowButton()">Show</button>
 	</div>
-
-</body>
-</html>
+{% endblock %}

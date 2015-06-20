@@ -1,6 +1,16 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-<h2>Finnish-English-Chinese Dictionary</h2>
-<h4><a href="{% url 'list' %}">Finnish vocabulary</a><br /></h4>
-<h4><a href="{% url 'flashcard' %}">Practice words</a><br /></h4>
+{% load staticfiles %}
+
+{% block body_block %}
+	<h2>Finnish-English-Chinese Dictionary</h2>
+
+	<div class="jumbotron">
+	  <h1>Jumbotron</h1>
+	  <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+	  <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+	</div>
+	<h4><a href="{% url 'list' %}">Finnish vocabulary</a><br /></h4>
+	<h4><a href="{% url 'flashcard' %}">Practice words</a><br /></h4>
+{% endblock %}
     

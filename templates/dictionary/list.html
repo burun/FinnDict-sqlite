@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-<h2>Finnish vocabulary</h2>
-{% for word in words_list %}
+{% load staticfiles %}
+
+{% block body_block %}
+	<h2>Finnish vocabulary</h2>
+	{% for word in words_list %}
     <ul>
         <li><a href="/dictionary/word/{{ word.slug }}">{{ word.finnish }}</a></li>
     </ul>
-{% endfor %}
+	{% endfor %}
+{% endblock %}
     

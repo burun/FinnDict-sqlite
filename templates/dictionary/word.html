@@ -1,5 +1,9 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-<h2>{{ word_finnish }}</h2>
-<p>English: {{ word_english }}</p>
-<p>中文: {{ word_chinese }}</p>
+{% load staticfiles %}
+
+{% block body_block %}
+	<h2>{{ word_finnish }}</h2>
+	<p>English: {{ word_english }}</p>
+	<p>中文: {{ word_chinese }}</p>
+{% endblock %}
