@@ -10,6 +10,7 @@ class Word(models.Model):
     note = models.CharField(max_length=256, blank=True)
     category = models.CharField(max_length=128, blank=True)
     slug = models.SlugField(unique=True)
+    times_practiced = models.PositiveIntegerField(default=1)
 
     def __str__(self):
         return self.finnish
@@ -17,3 +18,6 @@ class Word(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.finnish)
         super(Word, self).save(*args, **kwargs)
+
+    def set_next_practice(self):
+        self.times_practiced += 1

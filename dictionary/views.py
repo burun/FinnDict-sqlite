@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from dictionary.models import Word
+from django.template import RequestContext
 
 
 def index(request):
@@ -28,3 +29,20 @@ def word(request, word_name_slug):
         pass
 
     return render(request, 'dictionary/word.html', context_dict)
+
+
+def flashcard(request):
+    '''
+    Practice the word by flashcard
+    '''
+    # Get all the words in database
+    practices = Word.objects.order_by('times_practiced')
+    practice = practices[0]
+    context_dict = {'practice': practice}
+
+    # Set next practiced word
+    practice_word = get_object_or_404(Word, pk=int(practice.id))
+    practice_word.set_next_practice()
+    practice_word.save()
+
+    return render(request, 'dictionary/flashcard.html', context_dict, context_instance=RequestContext(request))

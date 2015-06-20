@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>  
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+	<h1>Practice flashcards </h1>
+
+	<script>
+	function RefreshButton() {
+	    location.reload();
+	}
+	</script>
+
+	<script>
+	function ShowButton() {
+	    $('.practice_back').replaceWith('{{ practice.chinese }}');
+	}
+	</script>
+
+
+
+	<div class="front_view">{{ practice.finnish }}</div>
+
+	<div class="clickme">
+	    <div class="practice_back">
+	        <b>Show the Chinese...</b>
+	    </div>
+	</div>
+
+	<div>
+	    <button onclick="RefreshButton()">Next</button>
+	</div>
+
+	<div>
+	    <button onclick="ShowButton()">Show</button>
+	</div>
+
+</body>
+</html>
